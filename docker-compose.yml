@@ -1,0 +1,16 @@
+# Time-stamp: <2019-09-06 22:48:00 daniel>
+
+#
+# docker-compose.yml
+#
+
+# This is the docker-compose file associated with
+# the example projects for digimarc
+#
+# Auther: Daniel Mendyke [archadious@gmail.com]
+# https://github.com/TaurusEight/digimarc
+
+version: '3'
+services:
+  parseblock:
+    build: ./
