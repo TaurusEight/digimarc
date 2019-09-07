@@ -1,18 +1,34 @@
+# Time-stamp: <2019-09-07 15:18:41 daniel>
+# Author: Daniel Mendyke
+
+#
+# Makefile for sample applications written for Digimarc
+#
 
 ##
-rm := /usr/bin/rm
-cc := /usr/bin/g++ -std=c++17
+# Macros
+rm := /usr/bin/env rm
+cc := /usr/bin/env g++ -std=c++17
 valgrind := @valgrind
-targets := move_example vector_example thread_example
+targets := move_example vector_example thread_example vector_size
 
+##
+# Standard rule for creating C++ applications from source
 %.o : %.cc ; $(cc) -c -o $@ $<
 
+##
+# Main target
 all : $(targets)
 
+##
+# Build sample applications from their objects
 move_example : move_example.o ; $(cc) -o $@ $^
 vector_example : vector_example.o ; $(cc) -o $@ $^
 thread_example : thread_example.o ; $(cc) -o $@ $^ -pthread
+vector_size : vector_size.o ; $(cc) -o $@ $^
 
+##
+# Test the sample applications by running them through Valgrind
 test : $(targets)
 # Move Constructor Example
 	@echo
@@ -30,6 +46,14 @@ test : $(targets)
 	@echo ==================================
 	$(valgrind) ./thread_example
 	@echo
+# Vector size
+	@echo Vector Data Size
+	@echo ==================================
+	$(valgrind) ./vector_size
+	@echo
 
+
+##
+# Remove objects and compiled applications
 .PHONY : clean
 clean : ; $(rm) --force $(targets) *.o
