@@ -22,8 +22,9 @@ Programming Examples:
 
 * move_example.  An example of the move constructor in C++
 
-*
+* vector_example.  A set of examples using the C++ vector class
 
+* thread_example.  Example of using std::thread and C++11 random library
 
 
 Programming notes:
