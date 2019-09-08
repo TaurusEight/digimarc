@@ -9,8 +9,8 @@ developed as examples for Digimarc.
 Build Instructions:
 -------------------
 
-* By Docker.  The command ‘docker-compose up’ should be sufficient to
-  build the application.  Or ‘docker build -t block.parse .’ if using
+* By Docker.  The command ‘docker-compose build’ should be sufficient to
+  build the application.  Or ‘docker build -t digimarc .’ if using
   the docker command.
 
 * At the command line.  Change into the directory 'src' and issue the
@@ -20,11 +20,15 @@ Build Instructions:
 Programming Examples:
 ------------------------
 
-* move_example.  An example of the move constructor in C++
+* move_example:    An example of the move constructor in C++
 
-* vector_example.  A set of examples using the C++ vector class
+* vector_example:  A set of examples using the C++ vector class
 
-* thread_example.  Example of using std::thread and C++11 random library
+* thread_example:  Example of using std::thread and C++11 random library
+
+* vector_size:     Test code to determine memory use by std::vector
+
+* word_puzzle.hh:  Sample Header File for a word find puzzle generator
 
 
 Programming notes:

@@ -1,4 +1,4 @@
-# Time-stamp: <2019-09-07 15:18:41 daniel>
+# Time-stamp: <2019-09-07 20:46:30 daniel>
 # Author: Daniel Mendyke
 
 #
@@ -10,7 +10,10 @@
 rm := /usr/bin/env rm
 cc := /usr/bin/env g++ -std=c++17
 valgrind := @valgrind
-targets := move_example vector_example thread_example vector_size
+targets := move_example \
+           vector_example \
+           thread_example \
+           vector_size
 
 ##
 # Standard rule for creating C++ applications from source
